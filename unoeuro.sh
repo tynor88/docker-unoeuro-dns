@@ -3,7 +3,7 @@
 if [ -f /config/unoeuro.new.conf ]; then
   tr -d '\r' < /config/unoeuro.new.conf > /tmp/unoeuro.new.conf
   . /tmp/unoeuro.new.conf
-  RESPONSE=`curl -s "https://api.unoeuro.com/ddns.php?apikey=$APIKEY&domain=$DOMAIN&hostname=$HOSTNAME"`
+  RESPONSE=`curl -s -L "https://api.unoeuro.com/ddns.php?apikey=$APIKEY&domain=$DOMAIN&hostname=$HOSTNAME"`
   if [ "$RESPONSE" = "good" ]; then
     echo "Your IP was updated for domain: $DOMAIN hostname: $HOSTNAME at "$(date)
   elif [ "$RESPONSE" = "nochg" ]; then
