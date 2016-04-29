@@ -18,7 +18,7 @@
   echo "Fixing permissions"
   chmod -R go+rw /config
   
-  #Get docker env timezone and set system timezone
+  # Get docker env timezone and set system timezone
   echo $TZ > /etc/timezone
   export DEBCONF_NONINTERACTIVE_SEEN=true DEBIAN_FRONTEND=noninteractive
   dpkg-reconfigure tzdata
