@@ -1,1 +1,1 @@
-*/5 * * * * root /app/script/unoeuro.sh 2>&1 | /usr/bin/logger -t UnoEuroDNS
+*/1 * * * * root /app/script/unoeuro.sh 2>&1 | /usr/bin/logger -t UnoEuroDNS
