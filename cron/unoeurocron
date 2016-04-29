@@ -1,0 +1,1 @@
+*/5 * * * * /app/script/unoeuro.sh 2>&1 | /usr/bin/logger -t UnoEuroDNS

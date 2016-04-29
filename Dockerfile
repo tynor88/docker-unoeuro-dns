@@ -1,19 +1,9 @@
 FROM phusion/baseimage:0.9.16
-
 MAINTAINER tynor88 <tynor@hotmail.com>
+ARG DEBIAN_FRONTEND="noninteractive"
 
-VOLUME ["/config"]
-
-# Add dynamic dns script
-ADD unoeuro.sh /root/unoeuro/unoeuro.sh
-
-RUN chmod +x /root/unoeuro/unoeuro.sh && \
-mkdir -p /etc/my_init.d
-
-ADD firstrun.sh /etc/my_init.d/firstrun.sh
-ADD unoeurocron.conf /root/unoeuro/unoeurocron.conf
-
-RUN chmod +x /etc/my_init.d/firstrun.sh && \
-crontab /root/unoeuro/unoeurocron.conf
-
-RUN cron
+#Adding Custom files
+COPY init/ /etc/my_init.d/
+COPY cron/ /etc/cron.d/
+COPY app/script/ /app/script/
+RUN chmod -v +x /etc/service/*/run /etc/my_init.d/*.sh /app/script/*.sh
