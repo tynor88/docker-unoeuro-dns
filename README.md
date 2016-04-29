@@ -1,5 +1,5 @@
 # docker-unoeuro-dns
-Keep your DNS records for your own domains updated with this UnoEuro DDNS script. UnoEuro provides a free DNS service for your custom domains. You can move all your domains for free and have them managed at UnoEuro.
+Keep your DNS records for your own domains updated with this UnoEuro DDNS script. UnoEuro provides a free DNS service for your private domains. You can move all your domains for free and have them managed at UnoEuro.
 
 ## Usage
 
