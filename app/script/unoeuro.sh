@@ -6,7 +6,7 @@ if [[ "$RESPONSE" == good* ]]; then
   UPDATE_MESSAGE="IP was updated (${RESPONSE#*good }) for domain: $DOMAIN hostname: $HOSTNAME"
   echo $UPDATE_MESSAGE
   if [[ ! -v "$PUSHBULLET_ACCESS_TOKEN" ]]; then
-    RESPONSE=$(curl --header 'Access-Token: $PUSHBULLET_ACCESS_TOKEN' --header 'Content-Type: application/json' --data-binary '{"body":"$UPDATE_MESSAGE","title":"IP Updated","type":"note"}' --request POST https://api.pushbullet.com/v2/pushes)
+    RESPONSE=$(curl -s -L --header 'Access-Token: $PUSHBULLET_ACCESS_TOKEN' --header 'Content-Type: application/json' --data-binary '{"body":"$UPDATE_MESSAGE","title":"IP Updated","type":"note"}' --request POST https://api.pushbullet.com/v2/pushes)
   fi
 elif [ "$RESPONSE" = "nochg" ]; then
   echo "The record is already set to the IP given"
