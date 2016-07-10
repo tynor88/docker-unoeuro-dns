@@ -6,8 +6,8 @@ if [ -z "$DOMAIN" ] || [ -z "$HOSTNAME" ] || [ -z "$APIKEY" ]; then
   exit 1
 else
   echo "Retrieving domain, hostname and apikey from the environment variables"
-  echo -e "DOMAIN=$DOMAIN \nHOSTNAME=$HOSTNAME \nAPIKEY=$APIKEY \n" > /config/unoeuro.conf
+  echo -e "DOMAIN=$DOMAIN \nHOSTNAME=$HOSTNAME \nAPIKEY=$APIKEY \nPUSHBULLET_ACCESS_TOKEN=$PUSHBULLET_ACCESS_TOKEN \n" > /config/unoeuro.conf
 fi
-  
+
 echo "Fixing permissions..."
 chmod -R go+rw /config

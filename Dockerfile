@@ -1,6 +1,5 @@
 FROM phusion/baseimage:0.9.19
 MAINTAINER tynor88 <tynor@hotmail.com>
-ARG DEBIAN_FRONTEND="noninteractive"
 
 #Adding Custom files
 COPY init/ /etc/my_init.d/

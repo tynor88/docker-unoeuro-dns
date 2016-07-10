@@ -9,6 +9,7 @@ docker create \
   -e DOMAIN=<domain> \
   -e HOSTNAME=<hostname> \
   -e APIKEY=<apikey> \
+  -e PUSHBULLET_ACCESS_TOKEN=<access_token>
   tynor88/unoeuro-dns
 ```
 
@@ -17,11 +18,12 @@ docker create \
 * `-e DOMAIN` The name of the domain (product) you wish to update (without www). Can be in punycode format. Ie. "example.com"
 * `-e HOSTNAME` The name of the A record you wish to update. The domain should not be appended to this. Ie. use "home", not "home.example.com"
 * `-e APIKEY` The API key for the UnoEuro account. Found in UnoEuro's controlpanel
+* `-e PUSHBULLET_ACCESS_TOKEN` The access token for the Pushbullet API. Found on https://www.pushbullet.com/#settings/account . Leave empty for disabling this feature.
 
 ## Setting up the application
 
 Make sure your domain's DNS is managed by UnoEuro and retrieve your Api-key (https://www.unoeuro.com/controlpanel/account.php). Then run the docker create command above with your domain, hostname and apikey  
-It will update your IP with the UnoEuro DNS service every 5 minutes  
+It will update your IP with the UnoEuro DNS service every 5 minutes. Optionally specify your Pushbullet access token to receive notifications if the IP was updated or something went wrong.
 
 ## Info
 
@@ -31,4 +33,6 @@ It will update your IP with the UnoEuro DNS service every 5 minutes
 
 ## Versions
 
++ **2016/07/10:**
+  * Added support for Pushbullet notifications
 + **2016/04/29:** Initial release
