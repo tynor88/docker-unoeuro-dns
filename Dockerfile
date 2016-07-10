@@ -1,4 +1,4 @@
-FROM phusion/baseimage:0.9.16
+FROM phusion/baseimage:0.9.19
 MAINTAINER tynor88 <tynor@hotmail.com>
 ARG DEBIAN_FRONTEND="noninteractive"
 
