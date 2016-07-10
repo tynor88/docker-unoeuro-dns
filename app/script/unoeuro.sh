@@ -7,7 +7,7 @@ UNOEURO_API_URL="https://api.unoeuro.com/ddns.php?apikey=$APIKEY&domain=$DOMAIN&
 PUSHBULLET_API_URL="https://api.pushbullet.com/v2/pushes"
 
 send_pushbullet () {
-  if [[ ! -v "$PUSHBULLET_ACCESS_TOKEN" ]]; then
+  if [[ ! -z "$PUSHBULLET_ACCESS_TOKEN" ]]; then
     RESPONSE_PUSHBULLET=$(curl -s -L --header "Access-Token: $PUSHBULLET_ACCESS_TOKEN" --header "Content-Type: application/json" --data-binary "{\"body\":\"$1\",\"title\":\"$2\",\"type\":\"note\"}" --request POST "$PUSHBULLET_API_URL")
     if [[ "$RESPONSE_PUSHBULLET" == {\"error* ]]; then
       echo "Could not send Pusbullet notification due to an error: $RESPONSE_PUSHBULLET"
