@@ -1,4 +1,8 @@
 # docker-unoeuro-dns
+[![Docker Pulls](https://img.shields.io/docker/pulls/tynor88/unoeuro-dns.svg)][hub]
+[![Docker Stars](https://img.shields.io/docker/stars/tynor88/unoeuro-dns.svg)][hub]
+[![Docker Build](https://img.shields.io/docker/automated/tynor88/unoeuro-dns.svg)][hub]
+
 Keep your DNS records for your own domains updated with this UnoEuro DDNS script. UnoEuro provides a free DNS service for your private domains. You can move all your domains for free and have them managed at UnoEuro.
 
 ## Usage
