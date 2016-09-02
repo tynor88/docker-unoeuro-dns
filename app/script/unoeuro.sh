@@ -23,7 +23,7 @@ if [[ "$RESPONSE_UNOEURO" == good* ]]; then
   UPDATE_MESSAGE="IP was updated (${RESPONSE_UNOEURO#*good }) for domain: $DOMAIN hostname: $HOSTNAME"
   echo $UPDATE_MESSAGE
   send_pushbullet "$UPDATE_MESSAGE" "IP Updated"
-elif [ "$RESPONSE_UNOEURO" = nochg* ]; then
+elif [[ "$RESPONSE_UNOEURO" = nochg* ]]; then
   echo "The DNS record is already set to the IP given"
 elif [ "$RESPONSE_UNOEURO" = "badauth" ]; then
   ERROR_MESSAGE="Invalid UnoEuro ApiKey ($APIKEY)"
