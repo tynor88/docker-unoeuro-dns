@@ -33,6 +33,8 @@ It will update your IP with the UnoEuro DNS service every 5 minutes. Optionally 
 
 ## Versions
 
++ **2016/07/11:**
+  * Changed to baseimage to lsiobase/alpine with s6 overlays
 + **2016/07/10:**
   * Added support for Pushbullet notifications (optional)
   * Update to latest phusion baseimage (0.9.19)
