@@ -1,4 +1,11 @@
 # docker-unoeuro-dns
+[![Docker Pulls](https://img.shields.io/docker/pulls/tynor88/unoeuro-dns.svg)][hub]
+[![Docker Stars](https://img.shields.io/docker/stars/tynor88/unoeuro-dns.svg)][hub]
+[![Docker Build](https://img.shields.io/docker/automated/tynor88/unoeuro-dns.svg)][hub]
+[![Docker Layers](https://images.microbadger.com/badges/image/tynor88/unoeuro-dns.svg)][hub]
+[![Docker Version](https://images.microbadger.com/badges/version/tynor88/unoeuro-dns.svg)][hub]
+[hub]: https://hub.docker.com/r/tynor88/unoeuro-dns/
+
 Keep your DNS records for your own domains updated with this UnoEuro DDNS script. UnoEuro provides a free DNS service for your private domains. You can move all your domains for free and have them managed at UnoEuro.
 
 ## Usage
@@ -35,6 +42,8 @@ It will update your IP with the UnoEuro DNS service every 5 minutes. Optionally 
 
 + **2016/07/11:**
   * Changed to baseimage to lsiobase/alpine with s6 overlays
++ **2016/09/02:**
+  * Fixed a response check, as UnoEuro's Api changed
 + **2016/07/10:**
   * Added support for Pushbullet notifications (optional)
   * Update to latest phusion baseimage (0.9.19)
